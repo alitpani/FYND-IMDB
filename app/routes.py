@@ -42,11 +42,15 @@ def delete():
     movie_name = received_json_data['name']
     try :
         movies = Movies.query.filter_by(name = movie_name)
-        for movie in movies:
-            db.session.delete(movie)
-            db.session.commit()
-        data = {'Message':'Success'}
-        return make_response(jsonify(data),200)
+        if movies:
+            for movie in movies:
+                db.session.delete(movie)
+                db.session.commit()
+            data = {'Message':'Success'}
+            return make_response(jsonify(data),200)
+        else:
+            data = {'Message':'Movie not Present'}
+            return make_response(jsonify(data),400)
     except:
         data = {'Message':'Movie Does not exist'}
         return make_response(jsonify(data),400)
@@ -157,10 +161,14 @@ def search():
         movie_name = form.movie_name.data
         try :
             movies = Movies.query.filter_by(name = movie_name)
-            for movie in movies:
-                data = jsonify( [{'99popularity': o.popularity,
-                           'director': o.director ,'genre':o.genre,'imdb_score':o.imdb_score, 'name':o.name} for o in movies] )
-            return make_response(data,200)
+            if movies:
+                for movie in movies:
+                    data = jsonify( [{'99popularity': o.popularity,
+                            'director': o.director ,'genre':o.genre,'imdb_score':o.imdb_score, 'name':o.name} for o in movies] )
+                return make_response(data,200)
+            else:
+                data = {'Message':'Movie not Present'}
+                return make_response(jsonify(data),400)
         except Exception as e:
             return json.dumps({'error occured': str(e)})
     return render_template('search.html', form=form)
