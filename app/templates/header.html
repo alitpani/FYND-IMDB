@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Fynd Task</title>
+    </head>
+    <body>
+    <h2 style="color:#093657">FYND API</h2>
+        
+        <hr>
+        {% with messages = get_flashed_messages()%}
+        {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li> {{message}}</li>
+        {% endfor %}
+    </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %} {% endblock %}
+    </body>
+</html>
