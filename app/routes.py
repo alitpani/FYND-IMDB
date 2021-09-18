@@ -44,7 +44,7 @@ def delete():
     try :
         movies = Movies.query.filter_by(name = movie_name)
         print('-----------------',movies)
-        if len(movies):
+        if movies.first()  is not None:
             for movie in movies:
                 db.session.delete(movie)
                 db.session.commit()
@@ -163,13 +163,13 @@ def search():
         movie_name = form.movie_name.data
         try :
             movies = Movies.query.filter_by(name = movie_name)
-            if len(movies):
+            if movies.first() is not None:
                 for movie in movies:
                     data = jsonify( [{'99popularity': o.popularity,
                             'director': o.director ,'genre':o.genre,'imdb_score':o.imdb_score, 'name':o.name} for o in movies] )
                 return make_response(data,200)
             else:
-                data = {'Message':'Movie not Present'}
+                data = {'Message':'Movie not Present.'}
                 return make_response(jsonify(data),400)
         except Exception as e:
             #return json.dumps({'error occured': str(e)})
