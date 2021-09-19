@@ -106,7 +106,8 @@ URL for admin: https://fynd-alit.herokuapp.com/admin/
 
 These UI admin page is implemented by FLASK-ADMIN
 
-*** Logout URL:
+***
+**Logout URL:
  https://fynd-alit.herokuapp.com/logout
 
 ***
@@ -123,8 +124,7 @@ bottlenecks at all layers of the stack and how you will solve for these.
 1. Dividing the app into smaller apps or microservices.
 2. Using Docker for deployment
 3. Using Kubernatives for managing containers.
-4. Using Vertical or Horizontal Scaling.
-5. Using Nginx asynchronous server and load balancing to handle requests 
+4. Using Nginx asynchronous server and load balancing to handle requests 
 
 ## Database Changes.
 1. Use of NO-SQL databases like Mongo-DB.
