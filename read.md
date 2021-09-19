@@ -103,3 +103,27 @@ URl for login:https://fynd-alit.herokuapp.com/login_tmp/
 URL for admin: https://fynd-alit.herokuapp.com/admin/
 
 These UI admin page is implemented by FLASK-ADMIN
+
+***
+
+***
+
+Once deployed, suppose this application became very famous and started to receive a
+ton of traffic. Your application now contains metadata about 5M movies and receives
+15M API hits per day both from anonymous as well as authenticated users. Suggest an
+architecture to scale up this system to 5x of these specs. You can also think of potential
+bottlenecks at all layers of the stack and how you will solve for these.
+
+## Architectural Changes- 
+1. Dividing the app into smaller apps or microservices.
+2. Using Docker for deployment
+3. Using Kubernatives for managing containers.
+4. Using Vertical or Horizontal Scaling.
+5. Using Nginx asynchronous server and load balancing to handle requests 
+
+## Database Changes.
+1. Use of NO-SQL databases like Mongo-DB.
+2. Writing effecient queries inorder to avoid load on DB.
+3. Removing Duplicate entries.
+4. Using orm queries with selecting only needed fields and ignoring the rest win order to  reduce data traffic.
+5. Using JSON for data transfer.

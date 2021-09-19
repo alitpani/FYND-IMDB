@@ -1,6 +1,6 @@
 from app import app,db
 from app.models import Movies,User
-from flask import make_response,jsonify,request,render_template
+from flask import make_response,jsonify,request,render_template,redirect,url_for
 from flask_login.utils import login_required, login_user
 import json
 from flask_login import logout_user, current_user
@@ -40,10 +40,8 @@ def get_one(id):
 def delete():
     received_json_data=request.json
     movie_name = received_json_data['name']
-    print(movie_name)
     try :
         movies = Movies.query.filter_by(name = movie_name)
-        print('-----------------',movies)
         if movies.first()  is not None:
             for movie in movies:
                 db.session.delete(movie)
@@ -119,9 +117,9 @@ def login_tmp():
                 if user.password == password:
                     login_user(user)
                     #return 'Loggedin'
-                    #return redirect(url_for('admin.index'))
-                    data = {'Message':'Logged In'}
-                    return make_response(jsonify(data),200)
+                    return redirect(url_for('admin.index'))
+                    """data = {'Message':'Logged In'}
+                    return make_response(jsonify(data),200)"""
         return render_template('login.html', form=form)
     except Exception as e:
         return json.dumps({'error occured': str(e)})
