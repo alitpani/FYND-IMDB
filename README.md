@@ -100,7 +100,8 @@ https://fynd-alit.herokuapp.com/update/45
 
 ## I have added one admin UI too which can be used to perform create, update and delete oprations via UI.
 
-URl for login:https://fynd-alit.herokuapp.com/login_tmp/
+URl for login:https://fynd-alit.herokuapp.com/login_tmp
+ 
 URL for admin: https://fynd-alit.herokuapp.com/admin/
 
 These UI admin page is implemented by FLASK-ADMIN
