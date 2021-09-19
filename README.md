@@ -106,6 +106,9 @@ URL for admin: https://fynd-alit.herokuapp.com/admin/
 
 These UI admin page is implemented by FLASK-ADMIN
 
+*** Logout URL:
+ https://fynd-alit.herokuapp.com/logout
+
 ***
 
 ***
