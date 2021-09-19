@@ -83,7 +83,7 @@ JSON data to be passed in  postman:
 ***
 
 ## Update_url(mothod:POST):
-
+https://fynd-alit.herokuapp.com/update/45
  {
         "99popularity": "66.0",
         "director": "Giovanni Pastrone",
