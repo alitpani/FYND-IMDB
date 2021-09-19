@@ -17,14 +17,13 @@ The features such as GET ALL and GET one can be used by anyone who so ever visit
 
 ## GET-ONE url: 
 https://fynd-alit.herokuapp.com/get_one/39 
-this url returs the vaalue based on the id that is passed as and integer. "https://fynd-alit.herokuapp.com/get_one/<id>"
+this url returs the vaalue based on the id that is passed as and integer.
 pass id as per your convineance.
-
 ***
 
 ## Search url:
 https://fynd-alit.herokuapp.com/search
-you can search any movie by its name
+you can search any movie by its name fro the UI
 
 ***
 
